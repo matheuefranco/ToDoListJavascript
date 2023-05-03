@@ -49,7 +49,7 @@ class Node {
       return true;
     }
 
-    addAtIndex(posicao, data) {
+    addAtIndex(posicao, data) { // add posicao
         if(posicao<=0)
           return this.addFirst(data);
         if(posicao>=this.length)

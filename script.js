@@ -1,18 +1,25 @@
- // Crie uma instância da fila
+ // Crie uma instância da lista
  let minhaLista = new LinkedList();
 
  // Função para adicionar um elemento 
  function adicionarElemento() {
-    const descricao = document.getElementById("txtnovaTarefa").value.trim();
-    const prioridade = document.getElementById("txtnovaPrioridade").value.trim();
-    const indice = document.getElementById("txtIndice").value.trim();
+    const descricao = document.getElementById("txtnovaTarefa");
+    const prioridade = document.getElementById("txtnovaPrioridade");
+    const indice = document.getElementById("txtIndice");
     
-    if (descricao === "" || prioridade === "") {
+    if (descricao.value === "" || prioridade.value === "") {
       alert("Preencha todos os campos antes de adicionar à fila!");
       return;
     }
-    
-    // instanciar nova tarefa e inserir no indice especificado
+      const novaTarefa =   
+      new Tarefa(descricao.value,prioridade.value,
+                  obterDataAtual(),obterHoraAtual());  
+      minhaLista.addAtIndex(indice.value,novaTarefa);
+      mostrarLista(); 
+      descricao.value = "";
+      prioridade.value="";
+      indice.value="";
+      descricao.focus();           
  }
   // Função para adicionar um elemento ordenado
   function adicionarOrdenado() {
