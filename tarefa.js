@@ -22,8 +22,8 @@
         return this._prioridade;
     }
 
-    set prioridade(cpf) {
-        this._prioridade = cpf;
+    set prioridade(prioridade) {
+        this._prioridade = prioridade;
     }
 
     get data() {
