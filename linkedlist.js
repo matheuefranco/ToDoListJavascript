@@ -62,6 +62,7 @@ deleteFirst() {
       }
       else
         this.tail = null;
+      this.length--;  
       return removedData; // Retorna o valor do elemento removido
   }
 //------------------------------------------------------------
